@@ -27,6 +27,8 @@
     "node-notifier": "^6.0.0",
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "style-loader": "^1.1.2",
+    "ts-loader": "^6.2.1",
+    "typescript": "^3.7.4",
     "uglifyjs-webpack-plugin": "^2.2.0",
     "url-loader": "^3.0.0",
     "vue": "^2.6.11",
