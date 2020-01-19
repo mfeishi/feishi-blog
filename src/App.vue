@@ -1,8 +1,6 @@
 <template>
-	<div id="app">
-
-		1
-		<!-- <img style="width: 100px;height: 100px;display: block;" src="./components/images/timg.jpeg" alt=""> -->
+	<div id="wrap">
+		<router-view name="body"></router-view>
 	</div>
 </template>
 

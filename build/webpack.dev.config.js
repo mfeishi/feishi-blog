@@ -4,7 +4,7 @@ const baseWebpackConfig  = require('./webpack.base.config');
 const portfinder = require('portfinder') //避免端口占用
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const chalk = require('chalk');
-const notifier = require('node-notifier');
+const notifier = require('node-notifier'); //todo
 const PORT  = 8080;
 
 

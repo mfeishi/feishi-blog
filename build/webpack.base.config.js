@@ -4,14 +4,13 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const WebpackBar = require("webpackbar");
+const SRCPATH = path.resolve(__dirname, '..', 'src');
 
 
 const BUILD_ENV = process.env.BUILD_ENV;
-
-
 module.exports = {
 	entry: {
-		main: [path.resolve(__dirname, '../src/main.js')]
+		main: [path.resolve(__dirname, '../src/main')]
 	},
 	output: {
 		filename: 'js/[name]-[hash].js',
@@ -33,38 +32,51 @@ module.exports = {
 	],
 	module: {
 		rules: [{
-			test: /\.jsx?/,
-			exclude: /node_modules/,
-			loader: "babel-loader"
-		}, {
-			test: /\.vue$/,
-			use: [{
-				loader: 'vue-loader',
-			}]
-		}, {
-			test: /\.(less|css)$/,
-			use: [
-				BUILD_ENV == 'development' ? "style-loader" : MiniCssExtractPlugin.loader,
-				// "style-loader",
-				"css-loader",
-				"less-loader"
-			]
-		}, {
-			test: /\.(jpe?g|png|gif|svg)$/,
-			use: [{
-				loader: 'url-loader',
+				test: /\.tsx?$/,
+				loader: 'ts-loader',
+				exclude: /node_modules/,
 				options: {
-					limit: 8 * 1024,
-					// outputPath: 'images',
-					// name: '[path][name].[ext]',
-					name:'images/[name]_[hash:7].[ext]',
-					esModule: false, // 这里设置为false,遵循commonjs规范
-				},
-			}]
-		}, ]
-
-
-
+					appendTsSuffixTo: [/\.vue$/],
+				}
+			},
+			{
+				test: /\.jsx?/,
+				exclude: /node_modules/,
+				loader: "babel-loader"
+			}, {
+				test: /\.vue$/,
+				use: [{
+					loader: 'vue-loader',
+				}]
+			}, {
+				test: /\.(less|css)$/,
+				use: [
+					BUILD_ENV == 'development' ? "style-loader" : MiniCssExtractPlugin.loader,
+					"css-loader",
+					"less-loader"
+				]
+			}, {
+				test: /\.(jpe?g|png|gif|svg)$/,
+				use: [{
+					loader: 'url-loader',
+					options: {
+						limit: 8 * 1024,
+						// outputPath: 'images',
+						// name: '[path][name].[ext]',
+						name: 'images/[name]_[hash:7].[ext]',
+						esModule: false, // 这里设置为false,遵循commonjs规范
+					},
+				}]
+			},
+		]
+	},
+	resolve: {
+		extensions: ['.jsx', '.js', 'json', '.ts', '.tsx'], //文件扩展名默认为.js .json
+		modules: [SRCPATH, 'node_modules'],
+		alias: { //别名
+			'utils': path.resolve(__dirname, '../src/utils'),
+			'@': SRCPATH
+		}
 	}
 
 
