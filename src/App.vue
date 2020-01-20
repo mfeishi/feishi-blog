@@ -13,6 +13,9 @@
 
 			}
 		},
+		components:{
+			navHeader
+		},
 		mounted(){
 
 
