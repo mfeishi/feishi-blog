@@ -8,7 +8,7 @@ const routes = [
 		name: 'home',
 		components: {
 			body: resolve => {
-				return require(['@/components/home.vue'], resolve)
+				return require(['@/pages/home.vue'], resolve)
 			}
 		}
 	},

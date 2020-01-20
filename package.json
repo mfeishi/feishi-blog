@@ -15,6 +15,7 @@
     "@babel/preset-env": "^7.7.7",
     "babel-core": "^6.26.3",
     "babel-loader": "^8.0.6",
+    "babel-plugin-import": "^1.13.0",
     "clean-webpack-plugin": "^3.0.0",
     "cross-env": "^6.0.3",
     "css-loader": "^3.4.1",
@@ -41,5 +42,8 @@
     "webpack-dev-server": "^3.10.1",
     "webpack-merge": "^4.2.2",
     "webpackbar": "^4.0.0"
+  },
+  "dependencies": {
+    "muse-ui": "^3.0.2"
   }
 }
