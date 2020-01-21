@@ -1,7 +1,10 @@
 <template>
 	<div id="wrap">
 		<nav-header/>
-		<router-view name="body"></router-view>
+		<div class="main_center_content wrapContent">
+			<router-view name="body"></router-view>
+			
+		</div>
 	</div>
 </template>
 
@@ -29,5 +32,9 @@
 	}
 </script>
 
-<style>
+<style lang="less" scoped>
+	.wrapContent{
+		padding-top: 20px;
+		
+	}
 </style>

@@ -1,8 +1,8 @@
 const merge = require('webpack-merge');
 const baseWebpackConfig = require('./webpack.base.config.js');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
-const UglifyJSPlugin = require('uglifyjs-webpack-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const {
 	CleanWebpackPlugin
 } = require('clean-webpack-plugin');
@@ -12,7 +12,11 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
 	optimization: {
 		splitChunks: {},
 		minimizer: [
-			new UglifyJSPlugin(),
+			new TerserPlugin({
+				cache: true, // 开启缓存
+				parallel: true, // 支持多进程
+				// sourceMap: true, 
+			}),
 			new OptimizeCssAssetsPlugin({ //css压缩
 				assetNameRegExp: /\.css$/g,
 				cssProcessor: require('cssnano'),
@@ -35,9 +39,9 @@ const prodWebpackConfig = merge(baseWebpackConfig, {
 		new MiniCssExtractPlugin({ //单独提取css
 			filename: 'css/[name].[chunkhash:8].css',
 			chunkFilename: 'css/[name].[chunkhash:8].css',
-		}),
+		})
 	]
 
 })
-console.error(prodWebpackConfig)
+
 module.exports = prodWebpackConfig

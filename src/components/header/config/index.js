@@ -1,7 +1,7 @@
 export const navList = [{
 	label:'文章',
-	value:'a'
+	value:'articles'
 },{
 	label:'项目',
-	value:'b'
+	value:'project'
 }]
