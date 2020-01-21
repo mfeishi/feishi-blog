@@ -17,7 +17,9 @@
 		private msg: string = 'www';
 
 
-
+		mounted(){
+			
+		}
 
 	}
 </script>
