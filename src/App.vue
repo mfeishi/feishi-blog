@@ -1,40 +1,60 @@
 <template>
 	<div id="wrap">
-		<nav-header/>
-		<div class="main_center_content wrapContent">
-			<router-view name="body"></router-view>
-			
+		<div class="mainContent">
+			<nav-header v-if="isShowNav"/>
+			<div class="main_center_content wrapContent">
+				<router-view name="body"></router-view>
+			</div>
+		</div>
+		<div class="noNav_content">
+			<router-view name="noNav"></router-view>
 		</div>
 	</div>
 </template>
 
-<script>
+<script lang="ts">
 	import navHeader from './components/header/navHeader.vue';
-	export default {
-		data(){
-			return{
-
-			}
-		},
+	import {
+		Component,
+		Prop,
+		Vue,
+		Watch
+	} from 'vue-property-decorator';
+	import {
+		Route
+	} from "vue-router";
+	
+	@Component({
 		components:{
 			navHeader
 		},
-		mounted(){
-
-
+		props: [],
+		computed: {},
+		watch: {
+			"$route"(newval: Route, oldVal: Route): void{
+				let {meta} = newval
+				if(meta === true){
+					this.isShowNav = false
+				}else{
+					this.isShowNav = true
+				}
+			}
 		},
-		methods:{
-
-
-		}
+		mounted () {
+			console.error('app')
+		},
+		created () {}
+	})
+	export default class App extends Vue {
+		private isShowNav:boolean = true;
+		
 
 
 	}
 </script>
 
-<style lang="less" scoped>
+<style lang="less">
 	.wrapContent{
-		padding-top: 20px;
-		
+		padding: 20px 10px 0 10px;
 	}
 </style>

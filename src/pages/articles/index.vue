@@ -1,7 +1,9 @@
 <template>
 	<div class="articles">
 
-		articles
+		
+		<p class="a">articles</p>
+		<p class="b">articles</p>
 	</div>
 </template>
 
@@ -26,4 +28,12 @@
 
 
 <style lang="less">
+	.articles{
+		.a{
+			font-size: 24px;
+		}
+		.b{
+			font-size: .24rem;
+		}
+	}
 </style>

@@ -25,6 +25,14 @@ const routes = [
 		}
 	},
 	{
+		path: '/signin',
+		name: 'signin',
+		meta:true,
+		components: {
+			noNav:()=> import(/* webpackChunkName: 'signin' */"@/pages/signin/index.vue"),
+		}
+	},
+	{
 		path: '/',
 		redirect: '/articles'
 	},
@@ -33,5 +41,5 @@ const routes = [
 const vueRouter = new VueRouter({
 	mode:'history', //hash
 	routes
-})
+} as any)
 export default vueRouter

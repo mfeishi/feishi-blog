@@ -61,7 +61,7 @@ module.exports = {
 					"less-loader"
 				]
 			}, {
-				test: /\.(jpe?g|png|gif|svg)$/,
+				test: /\.(eot|svg|ttf|woff|woff2|png|jpe?g|gif)(\?\S*)?$/,
 				use: [{
 					loader: 'url-loader',
 					options: {
