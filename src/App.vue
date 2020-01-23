@@ -23,7 +23,7 @@
 	import {
 		Route
 	} from "vue-router";
-	
+
 	@Component({
 		components:{
 			navHeader
@@ -41,13 +41,20 @@
 			}
 		},
 		mounted () {
-			console.error('app')
+			// console.error('app')
 		},
-		created () {}
+		created () {
+			// console.error('create')
+		},
+		
 	})
 	export default class App extends Vue {
 		private isShowNav:boolean = true;
 		
+		beforeRouteEnter(to: any, from: any, next: () => void): void {
+		     console.error('beforeRouteEnter111');
+			next();
+		}
 
 
 	}

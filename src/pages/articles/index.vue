@@ -1,7 +1,7 @@
 <template>
 	<div class="articles">
 
-		
+
 		<p class="a">articles</p>
 		<p class="b">articles</p>
 	</div>
@@ -13,26 +13,28 @@
 		Prop,
 		Vue
 	} from 'vue-property-decorator';
-
-	@Component
+	
+	@Component({
+		beforeRouteLeave(to:any, from:any, next:any) {
+			next()
+		}
+	})
 	export default class Articles extends Vue {
 		private msg: string = 'www';
-
-
-		mounted(){
+		mounted() {
 			
 		}
-
 	}
 </script>
 
 
 <style lang="less">
-	.articles{
-		.a{
+	.articles {
+		.a {
 			font-size: 24px;
 		}
-		.b{
+
+		.b {
 			font-size: .24rem;
 		}
 	}

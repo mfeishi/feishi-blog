@@ -8,6 +8,7 @@ import '@/utils/rem';
 import MuseUI from 'muse-ui';
 import 'muse-ui/dist/muse-ui.css';
 
+
 MuseUI.theme.add('my-theme', {
   primary: "lightsteelblue",
   success: '#4caf50',
@@ -15,6 +16,7 @@ MuseUI.theme.add('my-theme', {
 }, 'light').use('my-theme')
 
 Vue.use(MuseUI);
+
 new Vue({
     el:'#wrap',
     router,
