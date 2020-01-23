@@ -1,4 +1,6 @@
-export const navList = [{
+import {NavListItem} from './interface';
+
+export const navList:NavListItem[] = [{
 	label:'文章',
 	value:'articles',
 	index:0

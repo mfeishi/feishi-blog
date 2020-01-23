@@ -49,6 +49,8 @@
 		Route
 	} from "vue-router";
 
+
+
 	@Component
 	export default class navHeader extends Vue {
 		private activeTabNum: number = 0;
@@ -109,7 +111,7 @@
 			display: none;
 		}
 	}
-	@import "../font/menu/iconfont.css";
+	@import "../../../assets/font/menu/iconfont.css";
 	.navHeader {
 		@white: #FFFFFF;
 		border-bottom: 1px solid #f0f0f0;

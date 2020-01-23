@@ -1,7 +1,7 @@
 <template>
 	<div id="wrap">
-		<div class="mainContent">
-			<nav-header v-if="isShowNav"/>
+		<div class="mainContent" v-if="isShowNav">
+			<nav-header/>
 			<div class="main_center_content wrapContent">
 				<router-view name="body"></router-view>
 			</div>

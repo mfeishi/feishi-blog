@@ -1,8 +1,8 @@
 import Vue from 'vue';
 import App from './App.vue';
 import router from './router'
-import '@/components/css/reset.less';
-import '@/components/css/global.less';
+import '../assets/css/reset.less';
+import '../assets/css/global.less';
 import '@/utils/rem';
 
 import MuseUI from 'muse-ui';
