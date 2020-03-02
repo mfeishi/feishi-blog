@@ -1,5 +1,4 @@
-body{ font-size:.12rem;font-family:"冬青黑体简体中文","微软雅黑","宋体",Arial,sans-serif;}
-body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, i, b, textarea, button, input, select  {
+ body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, li, a, p, h1, h2, h3, h4,h5, i, b, textarea, button, input, select  {
     padding: 0;
     margin: 0;
     list-style: none;
@@ -14,17 +13,18 @@ body, div, span, header, footer, nav, section, aside, article, ul, dl, dt, dd, l
 html{
     height: 100%;
     width: 100%;
+	body{ font-size:.14rem;font-family:"冬青黑体简体中文","微软雅黑","宋体",Arial,sans-serif;}
+	a{ text-decoration:none; color:lightsteelblue; }
+	li{ list-style:none; }
+	img{ border:none 0;}
+	input{ outline:none; border:none; background:none;}
+	input,textarea,select{ margin:0; }
+	input,textarea{ padding:0;}
+	input::-ms-clear{display:none;}
+	
+	/* 浮动公共样式 */
+	.left{ float:left; _display:inline; }
+	.right{ float:right; _display:inline; }
+	.clear:after{ display:block; content:''; clear:both;}
+	.clear{ zoom:1;}
 }
-a{ text-decoration:none; color:#666666; }
-li{ list-style:none; }
-img{ border:none 0;}
-input{ outline:none; border:none; background:none;}
-input,textarea,select{ margin:0; }
-input,textarea{ padding:0;}
-input::-ms-clear{display:none;}
-
-/* 浮动公共样式 */
-.left{ float:left; _display:inline; }
-.right{ float:right; _display:inline; }
-.clear:after{ display:block; content:''; clear:both;}
-.clear{ zoom:1;}

@@ -49,7 +49,7 @@ const devWebpackConfig = merge(baseWebpackConfig,{
 })
 
 
-module.exports = new Promise((resolve,reject)=>{
+module.exports = new Promise((resolve,reject)=>{ //寻找可用端口
 	portfinder.basePort = PORT
 	portfinder.getPort((err, port) => {
 		if (err) {

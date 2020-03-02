@@ -41,7 +41,11 @@
 			}
 		},
 		mounted () {
-			// console.error('app')
+			
+			// window.addEventListener('resize',()=>{
+			// 	console.error('resize')
+			// 	window.location.reload()
+			// },false)
 		},
 		created () {
 			// console.error('create')
@@ -51,7 +55,7 @@
 	export default class App extends Vue {
 		private isShowNav:boolean = true;
 		
-		beforeRouteEnter(to: any, from: any, next: () => void): void {
+		beforeRouteEnter(to: any, from: any, next: () => void): void { //路由钩子
 		     console.error('beforeRouteEnter111');
 			next();
 		}
@@ -61,7 +65,19 @@
 </script>
 
 <style lang="less">
-	.wrapContent{
-		padding: 20px 10px 0 10px;
+	#wrap{
+		height: 100%;
+		.mainContent{
+			
+			.wrapContent{
+				padding: 20px 10px 0 10px;
+				
+			}
+		}
+		
+		.noNav_content{
+			height: 100%;
+		}
 	}
+	
 </style>

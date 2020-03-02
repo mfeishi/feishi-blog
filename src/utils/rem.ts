@@ -4,7 +4,7 @@
           recalc = function () {
                  var clientWidth = docEl.clientWidth;               
                  if (!clientWidth) return;
-				 if (clientWidth>=1280) {
+				 if (clientWidth>=1080) {
 				 	docEl.style.fontSize = '100px';
 				 }else if(clientWidth>=540){
 					docEl.style.fontSize = 100 * (clientWidth / 540) + 'px';  //适配平板

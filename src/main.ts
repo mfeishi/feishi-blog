@@ -10,7 +10,7 @@ import 'muse-ui/dist/muse-ui.css';
 
 
 MuseUI.theme.add('my-theme', {
-  primary: "lightsteelblue",
+  primary: "lightsteelblue", //主题色配置
   success: '#4caf50',
   warning: '#ffeb3b',
 }, 'light').use('my-theme')

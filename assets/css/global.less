@@ -1,11 +1,27 @@
 @primary:lightsteelblue;
-
-@media screen and (min-width:769px) { //移动端nav适配
+@media screen and (min-width:1281px){ 
 	.main_center_content{
 		width: 1200px;
-
 		margin: 0 auto;
 	}
+}
+@media screen and (min-width:1081px) and (max-width:1280px){ 
+	.main_center_content{
+		width: 1080px;
+		margin: 0 auto;				
+	}
+}
+@media screen and (min-width:993px) and (max-width:1080px){ 
+           .main_center_content{
+           	width: 960px;
+			margin: 0 auto;
+           }
+}
+@media screen and (min-width:769px) and (max-width:992px){ 
+           .main_center_content{
+           	width: 750px;
+			margin: 0 auto;
+           }
 }
 @media screen and (max-width:768px) { //移动端nav适配
 	.main_center_content{
@@ -13,9 +29,12 @@
 
 	}
 }
+
+
 html{
 	body{
 		background-color: white;
+		height: 100%;
 	}
 }
 	

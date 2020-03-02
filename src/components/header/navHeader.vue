@@ -10,8 +10,8 @@
 						</mu-tabs>
 					</div>
 					<div class="rightContent right">
-						<mu-button flat :ripple="false" color="primary">登陆</mu-button>
-						<mu-button color="primary">注册</mu-button>
+						<mu-button flat :ripple="false" color="primary" @click=goLogin>登陆</mu-button>
+						<mu-button color="primary" @click=goRegister>注册</mu-button>
 					</div>
 					<div class="mobileRightContent right">
 						<span class="iconfont icon-menu" @click="open = !open"></span>
@@ -84,7 +84,18 @@
 				path: `/${value}`
 			})
 		}
-	
+		
+		private goLogin():void{ //跳转登陆页
+			this.$router.push({
+				path: `/user/login`
+			})	
+		}
+		
+		private goRegister():void{ //跳转注册页
+			this.$router.push({
+				path: `/user/register`
+			})	
+		}
 			
 	}
 </script>
@@ -128,7 +139,6 @@
 				display: flex;
 				height: 48px;
 				align-items: center;
-
 				button:nth-child(2) {
 					margin-left: 5px;
 				}
