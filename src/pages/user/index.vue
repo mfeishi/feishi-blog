@@ -12,12 +12,12 @@
 
 				<div class="title">
 					<div class="normal-title">
-						<a class="active" @click="goLogin">登录</a>
+						<a :class="activeIdx === 0 ?'active':''" @click="goLogin">登录</a>
 						<b>.</b>
-						<a @click="goRegister">注册</a>
-					</div>	
+						<a :class="activeIdx === 1 ?'active':''" @click="goRegister">注册</a>
+					</div>
 				</div>
-				
+
 				<div class="userContainer">
 					<router-view />
 				</div>
@@ -33,13 +33,35 @@
 	import {
 		Component,
 		Prop,
-		Vue
+		Vue,
+		Watch
 	} from 'vue-property-decorator';
-
+	import {
+		Route
+	} from "vue-router";
 	@Component
 	export default class UserIndex extends Vue {
+		private activeIdx: number = 0;
 		mounted() {
+			let {
+				name
+			} = this.$route
+			this.changeActiveIdx(name)
+		}
 
+		@Watch("$route") //watch路由
+		watchRoute(newval: Route, oldVal: Route): void {
+			let {
+				name
+			} = newval;
+			this.changeActiveIdx(name)
+		}
+		private changeActiveIdx(name ? : string): void {
+			if (name === 'register') {
+				this.activeIdx = 1
+			} else {
+				this.activeIdx = 0
+			}
 		}
 		private goIndex(): void {
 			this.$router.push({
@@ -60,7 +82,27 @@
 </script>
 
 
-
+<style lang="less">
+	@media (max-width: 768px) {//手机端	
+		.user {
+			min-height: 0;
+			background-color: transparent;
+			height: auto;
+			.logoContent {
+				display: none;
+			}
+			.mainContent {
+				background-color: white;
+				.mainWrap {
+					position: absolute;
+					left: 50%;
+					margin: 0 0 0 -2rem !important;
+					box-shadow: none !important;
+				}
+			}
+		}
+	}
+</style>
 <style lang="less" scoped>
 	.user {
 		height: 100%;
@@ -79,22 +121,19 @@
 				}
 			}
 		}
-
 		.mainContent {
 			height: 100%;
-
 			&:before {
 				content: "";
 				display: inline-block;
 				height: 85%;
 				vertical-align: middle;
 			}
-
 			.mainWrap {
 				width: 4rem;
 				margin: 0 auto 0;
 				padding: .5rem .5rem .3rem;
-				background-color: #fff;
+				background-color: white;
 				border-radius: .04rem;
 				box-shadow: 0 0 .08rem rgba(0, 0, 0, .1);
 				vertical-align: middle;
@@ -105,8 +144,8 @@
 					font-weight: 400;
 					color: #969696;
 					font-size: .18rem;
-					.normal-title {	
-						.active{
+					.normal-title {
+						.active {
 							font-weight: 700;
 							color: #409eff;
 							border-bottom: 2px solid #409eff;
@@ -119,11 +158,8 @@
 							padding: 10px;
 						}
 					}
-
 				}
 			}
-
 		}
-
 	}
 </style>
