@@ -45,7 +45,7 @@
 		private submitForm():void{
 			(this.$refs.loginForm as HTMLFormElement).validate().then((result:boolean) => {					
 			        console.error('form valid: ', result)
-						
+					
 			});	
 		}
 		private resetForm():void{
