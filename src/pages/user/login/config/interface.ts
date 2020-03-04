@@ -1,6 +1,6 @@
 type validateType = (val:string)=> boolean;
 
-export interface registerForm {
+export interface loginForm {
 	username:string; //用户名
 	password:string; //密码
 }

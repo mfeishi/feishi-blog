@@ -16,7 +16,7 @@ const devWebpackConfig = merge(baseWebpackConfig,{
 		open: true, // 自动打开浏览器
 		historyApiFallback: true,
 		hot:true,
-		quiet:true, // necessary for FriendlyErrorsPlugin 静默输出,控制台只输出第一次编译的信息，当你保存后再次编译的时候不会输出任何内容，包括错误和警告
+		quiet:false, // necessary for FriendlyErrorsPlugin 静默输出,控制台只输出第一次编译的信息，当你保存后再次编译的时候不会输出任何内容，包括错误和警告
 		overlay: { //在编译出错的时候，在浏览器页面上显示错误
 		      warnings: true,
 		      errors: true,

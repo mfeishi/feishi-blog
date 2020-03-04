@@ -12,7 +12,7 @@
 		      <mu-checkbox label="同意用户协议" v-model="validateForm.isAgree"></mu-checkbox>
 		    </mu-form-item> -->
 		    <mu-form-item>
-		      <mu-button color="primary" @click="submitForm">提交</mu-button>
+		      <mu-button color="primary" @click="submitForm">注册</mu-button>
 		      <mu-button @click="resetForm">重置</mu-button>
 		    </mu-form-item>
 		  </mu-form>
@@ -26,7 +26,7 @@
 		Prop,
 		Vue
 	} from 'vue-property-decorator';
-	import {registerForm} from './config/interface';
+	import {registerForm,validateFace} from './config/interface';
 	@Component
 	export default class Register extends Vue {
 		mounted(){
@@ -36,11 +36,11 @@
 			username:"",
 			password:"",
 		}
-		private usernameRules:object[] = [
+		private usernameRules:validateFace[] = [
 		        { validate: (val:string) => !!val, message: '必须填写用户名'},
 		        { validate: (val:string) => val.length >= 3, message: '用户名长度大于3'}
 		      ]		
-		private passwordRules:object[] = [
+		private passwordRules:validateFace[] = [
 		        { validate: (val:string) => !!val, message: '必须填写密码'},
 		        { validate: (val:string) => val.length >= 3 && val.length <= 10, message: '密码长度大于3小于10'}
 		      ]
