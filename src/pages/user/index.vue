@@ -56,7 +56,7 @@
 			} = newval;
 			this.changeActiveIdx(name)
 		}
-		private changeActiveIdx(name ? : string): void {
+		private changeActiveIdx(name:any): void {
 			if (name === 'register') {
 				this.activeIdx = 1
 			} else {
@@ -83,7 +83,7 @@
 
 
 <style lang="less">
-	@media (max-width: 768px) {//手机端	
+	@media (max-width: 768px) {//手机端
 		.user {
 			min-height: 0;
 			background-color: transparent;
