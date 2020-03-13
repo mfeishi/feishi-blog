@@ -3,7 +3,7 @@
 		<div class="nav_content">
 			<div class="nav_content_wrap">
 				<div class="main_center_content clear">
-					<div class="iconLeft left">222</div>
+					<div class="iconLeft left">333</div>
 					<div class="tabsContent left">
 						<mu-tabs class="muTabs" :value.sync="activeTabNum" inverse color="primary" indicator-color="primary" left>
 							<mu-tab @click=changeRoute(item) v-for="(item,idx) in navList" :key="item.index">{{item.label}}</mu-tab>
