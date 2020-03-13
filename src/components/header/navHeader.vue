@@ -3,7 +3,7 @@
 		<div class="nav_content">
 			<div class="nav_content_wrap">
 				<div class="main_center_content clear">
-					<div class="iconLeft left">111</div>
+					<div class="iconLeft left">222</div>
 					<div class="tabsContent left">
 						<mu-tabs class="muTabs" :value.sync="activeTabNum" inverse color="primary" indicator-color="primary" left>
 							<mu-tab @click=changeRoute(item) v-for="(item,idx) in navList" :key="item.index">{{item.label}}</mu-tab>
@@ -84,19 +84,19 @@
 				path: `/${value}`
 			})
 		}
-		
+
 		private goLogin():void{ //跳转登陆页
 			this.$router.push({
 				path: `/user/login`
-			})	
+			})
 		}
-		
+
 		private goRegister():void{ //跳转注册页
 			this.$router.push({
 				path: `/user/register`
-			})	
+			})
 		}
-			
+
 	}
 </script>
 
