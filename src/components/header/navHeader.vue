@@ -147,6 +147,14 @@
 				font-size: .24rem;
 			}
 		}
+		
+		
+		.mu-tab-link-highlight{ //resetCss
+			display: none;
+		}
+		.mu-tab-wrapper{
+			font-weight: bold;
+		}
 
 	}
 </style>

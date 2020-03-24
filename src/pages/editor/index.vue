@@ -1,7 +1,7 @@
 <template>
 	<div class="editor">
 		editor
-		
+		<router-view></router-view>
 	</div>
 </template>
 

@@ -1,4 +1,7 @@
 <template>
+	<div class="editorCreate">
+		editorCreate
+	</div>
 </template>
 
 <script>

@@ -5,11 +5,13 @@ Vue.use(VueRouter);
 import base from './modules/base';
 import common from './modules/common';
 import user from './modules/user';
+import editor from './modules/editor';
 
 const routes = Array.prototype.concat(
 	base,
 	common,
-	user
+	user,
+	editor
 )
 
 const vueRouter = new VueRouter({
