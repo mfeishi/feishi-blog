@@ -126,7 +126,10 @@
 	@import "../../../assets/font/menu/iconfont.css";
 	.navHeader {
 		@white: #FFFFFF;
+		width: 100%;
+		position: fixed;
 		border-bottom: 1px solid #f0f0f0;
+		top: 0;
 		.nav_content_wrap {
 			width: 100%;
 			height: 100%;

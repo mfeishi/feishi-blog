@@ -68,7 +68,7 @@
 	#wrap{
 		height: 100%;
 		.mainContent{
-			
+			padding-top: 50px;
 			.wrapContent{
 				padding: 20px 10px 0 10px;
 				
