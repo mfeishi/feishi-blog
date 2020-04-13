@@ -1,5 +1,11 @@
 FROM node:10.11.0
 
-RUN  npm install&&npm run build
+COPY . /feishi-blog
 
-COPY dist/ /root/dockerconfig/nginx/www
+WORKDIR /feishi-blog
+
+RUN npm install&&npm run build
+
+EXPOSE 8000
+
+CMD npm run dev

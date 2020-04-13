@@ -5,14 +5,14 @@ const portfinder = require('portfinder') //避免端口占用
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const chalk = require('chalk');
 const notifier = require('node-notifier'); //todo
-const PORT  = 8080;
+const PORT  = 3000;
 
 
 const devWebpackConfig = merge(baseWebpackConfig,{
 	mode: 'development',
 	// devtool: 'source-map',
 	devServer: {
-		port: 8000, //端口改为9000
+		port: 8000, //端口改为8000
 		open: true, // 自动打开浏览器
 		historyApiFallback: true,
 		hot:true,
@@ -39,7 +39,7 @@ const devWebpackConfig = merge(baseWebpackConfig,{
 			  onErrors: (severity, errors) => {
 				if (severity !== 'error') return
 				const { name, file } = errors[0]
-				notifier.notify({ //todo 
+				notifier.notify({ //todo
 				  title: 'Webpack error',
 				  message: `${severity} : ${name}`,
 				  subtitle: file || '',
@@ -48,15 +48,15 @@ const devWebpackConfig = merge(baseWebpackConfig,{
 		}),]
 })
 
-
-module.exports = new Promise((resolve,reject)=>{ //寻找可用端口
-	portfinder.basePort = PORT
-	portfinder.getPort((err, port) => {
-		if (err) {
-		      reject(err)
-		}else{
-			 devWebpackConfig.devServer.port = port
-			 resolve(devWebpackConfig)			
-		}	
-	})
-}) 
+module.exports = devWebpackConfig
+// module.exports = new Promise((resolve,reject)=>{ //寻找可用端口
+// 	portfinder.basePort = PORT
+// 	portfinder.getPort((err, port) => {
+// 		if (err) {
+// 		      reject(err)
+// 		}else{
+// 			 devWebpackConfig.devServer.port = port
+// 			 resolve(devWebpackConfig)
+// 		}
+// 	})
+// })
