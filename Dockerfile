@@ -1,10 +1,15 @@
 FROM node:10.11.0
 
-COPY . /feishi-blog
+RUN mkdir /workspace
 
-WORKDIR /feishi-blog
+WORKDIR /workspace
 
-RUN npm install&&npm run build
+COPY ./package.json /workspace/package.json
+COPY ./package-lock.json /workspace/package-lock.lock
+
+RUN npm install
+
+COPY . /workspace
 
 EXPOSE 8000
 
