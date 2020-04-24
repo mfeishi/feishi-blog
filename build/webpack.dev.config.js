@@ -21,7 +21,7 @@ const devWebpackConfig = merge(baseWebpackConfig,{
 		      warnings: true,
 		      errors: true,
 		},
-		disableHostCheck: true,
+		// disableHostCheck: true,
 		proxy:{ //代理
 			'/api':{
 				target:'https://cnodejs.org',
