@@ -9,7 +9,9 @@ COPY ./package-lock.json /workspace/package-lock.lock
 
 RUN npm config set registry https://registry.npm.taobao.org && npm install
 
-COPY . /workspace
+COPY . /workspacedo
 
 EXPOSE 8000
+
+CMD npm start
 
