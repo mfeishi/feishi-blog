@@ -5,11 +5,11 @@ const portfinder = require('portfinder') //避免端口占用
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const chalk = require('chalk');
 const notifier = require('node-notifier'); //todo
-const PORT  = 3000;
+const PORT  = 8000;
 
 
 const devWebpackConfig = merge(baseWebpackConfig,{
-	mode: 'development',
+	// mode: 'development',
 	// devtool: 'source-map',
 	devServer: {
 		port: 8000, //端口改为8000

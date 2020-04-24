@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "webpack --config build/webpack.base.config.js",
-    "dev": "cross-env BUILD_ENV=development webpack-dev-server --config build/webpack.dev.config.js",
+    "dev": "cross-env BUILD_ENV=development webpack-dev-server --inline --host 0.0.0.0 --config build/webpack.dev.config.js",
     "build": "cross-env BUILD_ENV=production webpack --config build/webpack.prod.config.js"
   },
   "author": "wr",
