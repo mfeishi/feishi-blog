@@ -1,15 +1,7 @@
 version: "3"
 services: # 服务列表
-    node: # node 服务
-        build: . # Dockerfile 的目录，用于构建镜像
-        container_name: fsblog # 容器名称
-        ports: # 暴露的端口
-            - "8000:8000"
-        environment: # 设置环境变量
-            - NODE_ENV=production
-        #command: npm run start # 覆盖容器启动后默认执行的命令
-    nginx:
-        image: nginx:latest 指定 nginx 镜像	
+   nginx:
+        image: nginx:latest #指定 nginx 镜像	
         ports: # 将本机的 8080 端口映射到容器的80端口
             - "80:80"
         container_name: nginx-node
@@ -17,10 +9,7 @@ services: # 服务列表
         volumes: # 挂载卷
             - "/Users/wangran/Desktop/wr/feishi-blog/nginx/nginx.conf:/etc/nginx/nginx.conf"
             - "/Users/wangran/Desktop/wr/feishi-blog/nginx/default.conf:/etc/nginx/conf.d/default.conf"
-        depends_on: # 指定依赖于哪个服务
-            - node
-			
-			
-			
-			
-			
+            - "/Users/wangran/Desktop/wr/feishi-blog/dist:/usr/share/nginx/html"
+
+  
+           
