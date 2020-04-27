@@ -2,7 +2,7 @@ version: "3"
 services: # 服务列表
    nginx:
         image: nginx:latest #指定 nginx 镜像	
-        ports: # 将本机的 8080 端口映射到容器的80端口
+        ports: # 将本机的 80 端口映射到容器的80端口
             - "80:80"
         container_name: feishiblog-nginx
         restart: always
