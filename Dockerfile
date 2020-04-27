@@ -13,5 +13,9 @@ COPY . /workspace
 
 EXPOSE 8000
 
-CMD npm start
+RUN npm run build
+
+VOLUME ['/Users/wangran/Desktop/blogdist','/workspace/dist']
+
+
 
