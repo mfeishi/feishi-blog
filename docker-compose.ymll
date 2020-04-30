@@ -6,6 +6,10 @@ services: # 服务列表
             - "80:80"
         container_name: feishiblog-nginx
         restart: always
+        volumes: # 挂载卷
+            - "./nginx/nginx.conf:/etc/nginx/nginx.conf"
+            - "./nginx/default.conf:/etc/nginx/conf.d/default.conf"
+            - "./dist:/usr/share/nginx/html"
         networks:
           - "my-network"
 networks: # 网络
