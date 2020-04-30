@@ -9,7 +9,7 @@ services: # 服务列表
         volumes: # 挂载卷
             - "/root/dockerconfig/nginx/nginx.conf:/etc/nginx/nginx.conf"
             - "/root/dockerconfig/nginx/default.conf:/etc/nginx/conf.d/default.conf"
-            - "/root/dockerconfig/nginx/www:/usr/share/nginx/html"
+            - "/root/dockerconfig/nginx/www/dist:/usr/share/nginx/html"
         networks:
           - "my-network"
 networks: # 网络
